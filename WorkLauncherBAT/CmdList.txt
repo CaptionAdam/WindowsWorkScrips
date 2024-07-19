@@ -1,0 +1,29 @@
+ssh root@192.168.1.35
+
+Mainsail Install
+1) cp /tmp/udisk/sda1/mainsail/* /usr/data/
+2) /usr/data/mainsail.sh install
+
+USB gcode Copy
+1) cp -r /tmp/udisk/sda1/gcode/* /usr/data/printer_data/gcodes
+
+Nano Install
+1) git clone https://github.com/Guilouz/Creality-Helper-Script.git /usr/data/helper-script
+2) sh /usr/data/helper-script/helper.sh
+3) #Navigate to install, then install entware
+4) #Exit and Reconnect#
+5) opkg install nano
+
+
+Set hostname
+1) hostname ender3-(#)
+2) nano /etc/hostname
+	a) #replace hostname with# ender3-(#)
+3) nano /etc/hosts
+	a) #replace hostnames with ender3-(#)
+4) reboot && exit
+
+
+LaserPi WebUI Credentials
+User: RCTShop
+Password: RCT2024
