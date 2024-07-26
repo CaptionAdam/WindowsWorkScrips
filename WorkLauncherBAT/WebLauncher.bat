@@ -19,7 +19,6 @@ ECHO                : 6  - #6 Ender 3 V3 KE :
 ECHO                :------Other Shit-------:
 ECHO                : l  - Laser Control    :
 ECHO                : o  - OMV              :
-ECHO                : r  - XRouterX -Fucked :
 ECHO                :--------Options--------:
 ECHO                : s  - SSH Launcher     :
 ECHO                : c  - CMD List         :
@@ -44,31 +43,31 @@ IF %M%==e GOTO Edit
 IF %M%==q GOTO EOF
 
 :ENDER1
-start "" http://ender3-1.local:4409/
+start "" http://ender3-1:4409/
 GOTO EOF
 
 :ENDER2
-start "" http://ender3-2.local:4409/
+start "" http://ender3-2:4409/
 GOTO EOF
 
 :ENDER3
-start "" http://ender3-3.local:4409//
+start "" http://ender3-3:4409//
 GOTO EOF
 
 :ENDER4
-start "" http://ender3-4.local:4409/
+start "" http://ender3-4:4409/
 GOTO EOF
 
 :ENDER5
-start "" http://ender3-5.local:4409/
+start "" http://ender3-5:4409/
 GOTO EOF
 
 :ENDER6
-start "" http://ender3-6.local:4409/
+start "" http://ender3-6:4409/
 GOTO EOF
 
 :OMV
-start "" http://rctshoppi1.local/
+start "" http://rctshoppi1/
 GOTO EOF
 
 :ROUTER
@@ -76,18 +75,18 @@ start "" http://192.168.0.1/
 GOTO EOF
 
 :Laser
-start "" http://laserpi.local/
+start "" http://laserpi/
 GOTO EOF
 
 :ALLENDER
 SET BROWSER=chrome.exe
 SET WAIT_TIME=2
-START %BROWSER% -new-window "http://ender3-1.local:4409/"
-START "" "http://ender3-2.local:4409/"
-START "" "http://ender3-3.local:4409/"
-START "" "http://ender3-4.local:4409/"
-START "" "http://ender3-5.local:4409/"
-START "" "http://ender3-6.local:4409/"
+START %BROWSER% -new-window "http://ender3-1:4409/"
+START "" "http://ender3-2:4409/"
+START "" "http://ender3-3:4409/"
+START "" "http://ender3-4:4409/"
+START "" "http://ender3-5:4409/"
+START "" "http://ender3-6:4409/"
 GOTO EOF
 
 :CmdList
@@ -140,49 +139,49 @@ IF %M%==q GOTO EOF
 :ENDER1-SSH
 CLS
 ECHO PASSWORD: Creality2023
-call ssh root@ender3-1.local
+call ssh root@ender3-1
 GOTO SSH
 
 :ENDER2-SSH
 CLS
 ECHO PASSWORD: Creality2023
-call ssh root@ender3-2.local
+call ssh root@ender3-2
 GOTO SSH
 
 :ENDER3-SSH
 CLS
 ECHO PASSWORD: Creality2023
-call ssh root@ender3-3.local
+call ssh root@ender3-3
 GOTO SSH
 
 :ENDER4-SSH
 CLS
 ECHO PASSWORD: Creality2023
-call ssh root@ender3-4.local
+call ssh root@ender3-4
 GOTO SSH
 
 :ENDER5-SSH
 CLS
 ECHO PASSWORD: Creality2023
-call ssh root@ender3-5.local
+call ssh root@ender3-5
 GOTO SSH
 
 :ENDER6-SSH
 CLS
 ECHO PASSWORD: Creality2023
-call ssh root@ender3-6.local
+call ssh root@ender3-6
 GOTO SSH
 
 :OMV-SSH
 CLS
 ECHO PASSWORD: RCT2024
-call ssh pi@rctshoppi1.local
+call ssh pi@rctshoppi1
 GOTO SSH
 
 :USBIP-SSH
 CLS
 ECHO PASSWORD: RCT2024
-call ssh LaserPi@laserpi.local
+call ssh LaserPi@laserpi
 GOTO SSH
 
 :SlaveServer-SSH
